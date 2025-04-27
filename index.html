@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardboard Mechanical Progress Factory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1>Cardboard Mechanical Progress Factory</h1>
+
+<div id="addTask">
+    <input type="text" id="newTaskText" placeholder="New tiny step...">
+    <select id="newTaskProject">
+        <option value="Worldbuilder MVP">Worldbuilder MVP</option>
+        <option value="Ssscoop Branding">Ssscoop Branding</option>
+        <option value="Pigeon Enrichment">Pigeon Enrichment</option>
+        <option value="Factory Maintenance">Factory Maintenance</option>
+        <option value="Personal Progress">Personal Progress</option>
+    </select>
+    <button onclick="addNewTask()">Insinuate!</button>
+</div>
+
+<div id="score">Tasks Processed: 0</div>
+
+<div id="taskList"></div>
+<button onclick="factoryReset()">Factory Reset (Dev Only)</button>
+
+<script src="factory.js"></script>
+
+</body>
+</html>

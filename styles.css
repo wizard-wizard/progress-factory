@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Global box-sizing fix */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #777166;
+    background-image: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+    background-repeat: repeat;
+    color: #3e3e3e;
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+
+h1 {
+    font-family: 'VT323', monospace;
+    color: #00ff99;
+    font-size: 48px;
+    text-align: center;
+    text-shadow: 2px 2px #333;
+    margin-bottom: 30px;
+}
+
+#addTask {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#addTask input, #addTask select {
+    padding: 8px;
+    margin-right: 8px;
+    font-size: 18px;
+    font-family: 'VT323', monospace;
+}
+
+#addTask button {
+    background: #a0522d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'VT323', monospace;
+}
+
+#score {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #6a4e3a;
+    transition: transform 0.3s ease;
+}
+
+#taskList {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #8A8372; /* warm old concrete */
+    border: 4px dashed #ffa500;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 0 15px #6f6f6f, 0 0 10px #444;
+}
+
+.task {
+    width: 100%;
+    background: #d6d6c2;
+    border: 2px solid #b58b6a; /* this is overwritten dynamically for project */
+    padding: 20px 10px 10px 10px;
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* Neon graffiti tape decoration */
+.task::before {
+    content: '';
+    position: absolute;
+    width: var(--tape-length, 80px);
+    height:19px;
+    background: var(--tape-color, #ff00ff);
+    top: 0px;
+    left: var(--tape-left, 20px);
+    transform: rotate(var(--tape-angle, -10deg));
+    opacity: 0.7;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.fading {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.task-text {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.task-controls {
+    display: flex;
+    gap: 5px;
+}
+
+/* Clean project labeling still in place */
+.task-text strong {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.done {
+    background: #63CD63B5;
+}
+
+.done .task-text {
+    text-decoration: line-through;
+    color: #666;
+}
+
+button.complete, button.edit, button.delete {
+    background: #a0522d;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'VT323', monospace;
+    transition: transform 0.2s ease;
+}
+
+button.complete:hover, button.edit:hover, button.delete:hover {
+    background: #8b4513;
+    transform: translateY(-2px) rotate(-2deg);
+}
+
+#scrapCorner {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    color: #8b4513;
+    opacity: 0.8;
+}
